@@ -14,13 +14,17 @@
             </StackPanel>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 20 0 0">
                 <TextBlock Width="400" FontSize="20" TextAlignment="Right">Ваше зашифрованное сообщение:</TextBlock>
-                <TextBox Name="output" Width="300" TextAlignment="Center" IsReadOnly="True" FontSize="20" Margin="15 0 0 0"></TextBox>
-                </StackPanel>
+                <TextBox Name="output" Width="300" TextAlignment="Center" FontSize="20" Margin="15 0 0 0"></TextBox>
+            </StackPanel>
             <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" Orientation="Horizontal" Margin="0 20 0 0">
                 <TextBlock Width="400" FontSize="20" TextAlignment="Right">Код для расшифровки:</TextBlock>
-                <TextBox Width="300" TextAlignment="Center" IsReadOnly="True" FontSize="20" Margin="15 0 0 0" Name="outputVars"></TextBox>
+                <TextBox Width="300" TextAlignment="Center" FontSize="20" Margin="15 0 0 0" Name="outputVars"></TextBox>
             </StackPanel>
         </StackPanel>
+        <StackPanel VerticalAlignment="Bottom" Orientation="Horizontal" HorizontalAlignment="Center">
             <Button Width="120" Height="35" VerticalAlignment="Bottom" Margin="50" Click="Encrypt_Click">Зашифровать</Button>
+            <Button Width="120" Height="35" VerticalAlignment="Bottom" Margin="50" Click="Decrypt_Click">Расшифровать</Button>
+        </StackPanel>
+
     </Grid>
 </Window>
