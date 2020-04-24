@@ -1,0 +1,6 @@
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\bin\Debug\EncrypterLib.dll
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\bin\Debug\EncrypterLib.pdb
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\obj\Debug\EncrypterLib.csprojAssemblyReference.cache
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\obj\Debug\EncrypterLib.csproj.CoreCompileInputs.cache
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\obj\Debug\EncrypterLib.dll
+C:\Users\TheVe\Desktop\encrypt_app\EncrypterLib\obj\Debug\EncrypterLib.pdb
