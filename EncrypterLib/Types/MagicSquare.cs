@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 
 namespace EncrypterLib
 {
-    public static class MagicSquare
+    public class MagicSquare : IType
     {
-        private static readonly char separator = '.';
+        private readonly char separator = '.';
+        public char[] Characters { get; set; } = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
 
-        public static KeyValuePair<string, string> Encrypt(string message)
+        public KeyValuePair<string, string> Encrypt(string message)
         {
             var charDict = new Dictionary<int, char>();
             var randomArray = new List<int>();
@@ -36,7 +37,7 @@ namespace EncrypterLib
             return new KeyValuePair<string, string>(key.Remove(key.Length - 1), result);
         }
 
-        public static string Decrypt(string message, string key)
+        public string Decrypt(string message, string key)
         {
             var charDict = new Dictionary<int, char>();
             var arrChars = message.ToCharArray();

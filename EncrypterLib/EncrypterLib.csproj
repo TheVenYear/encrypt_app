@@ -43,7 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MagicSquare.cs" />
+    <Compile Include="Types\AlphReplacement.cs" />
+    <Compile Include="Types\Caesar.cs" />
+    <Compile Include="Types\DoubleRearrangement.cs" />
+    <Compile Include="Types\IType.cs" />
+    <Compile Include="Types\MagicSquare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rsa.cs" />
   </ItemGroup>

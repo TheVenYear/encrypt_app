@@ -15,10 +15,11 @@ namespace EncrypterLib
         public long D { get; set; }
         public long N { get; set; }
 
-        private static char[] characters = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.' };
+        private char[] characters = null;
 
-        public Rsa(long p, long q)
+        public Rsa(long p, long q, params char[] characters)
         {
+            this.characters = characters;
             this.p = p;
             this.q = q;
             N = p * q;
@@ -105,7 +106,7 @@ namespace EncrypterLib
             return e;
         }
 
-        public static string Decrypt(List<string> input, long d, long n)
+        public string Decrypt(List<string> input, long d, long n)
         {
             string result = "";
 

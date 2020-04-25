@@ -23,9 +23,14 @@ namespace EncrypterClient
     /// </summary>
     public partial class MainWindow : Window
     {
+        private IType asymmetric;
+        private Rsa symmetric;
+        private char[] characters;
         public MainWindow()
         {
             InitializeComponent();
+            asymmetric = new Caesar();
+            characters = asymmetric.Characters;
         }
 
         private void Decrypt_Click(object sender, RoutedEventArgs e)
@@ -44,21 +49,21 @@ namespace EncrypterClient
 
             var private_key = File.ReadAllText("private-key.txt").Split(':');
             var public_key = File.ReadAllLines("public-key.txt");
-            var key = Rsa.Decrypt(public_key.ToList(), long.Parse(private_key[0]), long.Parse(private_key[1]));
-            input.Text = MagicSquare.Decrypt(output.Text, key);
+            var key = symmetric.Decrypt(public_key.ToList(), long.Parse(private_key[0]), long.Parse(private_key[1]));
+            input.Text = asymmetric.Decrypt(output.Text, key);
         }
 
         private void Encrypt_Click(object sender, RoutedEventArgs e)
         {
-            var pair = MagicSquare.Encrypt(input.Text);
+            var pair = asymmetric.Encrypt(input.Text);
             output.Text = pair.Value;
+            MessageBox.Show($"{pair.Value}, {pair.Key}");
             var key = pair.Key;
-            Rsa rsa = null;
             if (int.TryParse(pInput.Text, out var p) && int.TryParse(qInput.Text, out var q))
             {
                 if (Rsa.IsSimple(p, q))
                 {
-                    rsa = new Rsa(p, q);
+                    symmetric = new Rsa(p, q, characters);
                 }
             }
             else
@@ -68,12 +73,12 @@ namespace EncrypterClient
             }
             using (StreamWriter writer = new StreamWriter("public-key.txt"))
             {
-                foreach (var line in rsa.Encrypt(key))
+                foreach (var line in symmetric.Encrypt(key))
                 {
                     writer.WriteLine(line);
                 }
             }
-            File.WriteAllText("private-key.txt", $"{rsa.D}:{rsa.N}");
+            File.WriteAllText("private-key.txt", $"{symmetric.D}:{symmetric.N}");
 
 
         }
