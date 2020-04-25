@@ -46,6 +46,7 @@
     <Compile Include="Types\AlphReplacement.cs" />
     <Compile Include="Types\Caesar.cs" />
     <Compile Include="Types\DoubleRearrangement.cs" />
+    <Compile Include="Types\Gronsfeld.cs" />
     <Compile Include="Types\IType.cs" />
     <Compile Include="Types\MagicSquare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
