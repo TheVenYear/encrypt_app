@@ -29,7 +29,7 @@ namespace EncrypterClient
         public MainWindow()
         {
             InitializeComponent();
-            asymmetric = new Caesar();
+            asymmetric = new SimpleRearrangement();
             characters = asymmetric.Characters;
         }
 

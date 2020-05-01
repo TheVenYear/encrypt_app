@@ -51,6 +51,7 @@
     <Compile Include="Types\MagicSquare.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Rsa.cs" />
+    <Compile Include="Types\SimpleRearrangement.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
